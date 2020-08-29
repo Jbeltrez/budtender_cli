@@ -4,7 +4,7 @@ class BudtenderCli::Cli
     # @@prescription = []
     def start 
         greeting 
-        final_step
+        # final_step
         # user_input 
         # while @input != "exit" do
         #     greeting 
@@ -103,14 +103,15 @@ class BudtenderCli::Cli
                     view_prescriptions
                 when "view my prescriptions by rating"
                     view_prescriptions_by_rating
+            end 
+        end 
+    end 
+    # @input = " "
 
                 # when "exit"
                 #     # "goodbye have a nice day"
                 #     exit 
             
-            end 
-        end 
-    end 
         
 
 
