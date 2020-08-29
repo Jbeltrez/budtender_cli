@@ -1,2 +1,2 @@
 require_relative "../lib/budtender_cli.rb"
-BudtenderCli::Cli.new.greeting 
+BudtenderCli::Cli.new.start
