@@ -3,7 +3,7 @@ class BudtenderCli::Cli
     @@desired_effects = ["relaxed", "euphoric", "creative", "happy", "uplifted"]
     # @@prescription = []
     def start 
-        greeting 
+        first_step 
         # final_step
         # user_input 
         # while @input != "exit" do
@@ -45,7 +45,7 @@ class BudtenderCli::Cli
         # end 
     end 
                 
-    def greeting 
+    def first_step 
         while @input != "exit"
         puts "Hi! Welcome to the Pharmacy Cli"
         puts "Enter a desired effect to recieve a prescription"
@@ -72,7 +72,7 @@ class BudtenderCli::Cli
     end
     def middle_step 
         label_warning 
-                # sleep(2)
+                sleep(1.5)
                 @@prescription = BudtenderCli::Prescription.new(@input)
                 @@prescription.save
                     # if @@prescription.desc == nil || ""
@@ -80,10 +80,11 @@ class BudtenderCli::Cli
                     # end
                 puts "Id No.#{@@prescription.id}\nName: #{@@prescription.name}\nDescription: #{@@prescription.desc}"
                 # puts "Id No.#{@@prescription[0].id}\nName: #{@@prescription[0].name}\nDescription: #{@@prescription[0].desc}"
+                sleep(1.5)
                 notes_time
-                # sleep(1.5)
+                sleep(1.5)
                 rating_time
-                # sleep(1.5)
+                sleep(1.5)
                 final_step
     end 
     def final_step
@@ -98,7 +99,7 @@ class BudtenderCli::Cli
             user_input
             case @input 
                 when "get another prescription"
-                    greeting
+                    first_step 
                 when "view my prescriptions"
                     view_prescriptions
                 when "view my prescriptions by rating"
@@ -135,7 +136,7 @@ class BudtenderCli::Cli
     end 
     def notes_time 
         puts "Enter some notes for your prescription."
-        user_input.to_i
+        user_input
         @@prescription.enter_notes=(@input)
         # @@prescription[0].enter_notes=(@input)
         #puts "Id No.#{prescription.id}\nName: #{prescription.name}\nDescription: #{prescription.desc}\nNotes: #{prescription.notes}\n"
@@ -144,6 +145,7 @@ class BudtenderCli::Cli
     def rating_time 
         puts "Give your prescription a star rating"
         puts "1     2     3"
+        
         user_input
         # @@prescription[0].rating=("#{@input}")
         @@prescription.rating=("#{@input}")
