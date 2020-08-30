@@ -63,6 +63,7 @@ class BudtenderCli::Cli
             middle_step
         when "uplifted"
             middle_step
+        
 
     
         end 
@@ -138,6 +139,8 @@ class BudtenderCli::Cli
         puts "Enter some notes for your prescription."
         user_input
         @@prescription.enter_notes=(@input)
+        # if user_input == "skip"
+            
         # @@prescription[0].enter_notes=(@input)
         #puts "Id No.#{prescription.id}\nName: #{prescription.name}\nDescription: #{prescription.desc}\nNotes: #{prescription.notes}\n"
         
@@ -154,14 +157,14 @@ class BudtenderCli::Cli
     def view_prescriptions
         #binding.pry
         # puts @@prescription[0].class.view_prescriptions.collect {|prescription| puts "Id No.#{prescription.id}\n#{prescription.name}\n#{prescription.desc}\n#{prescription.notes}\n#{prescription.rating}" }
-        puts @@prescription.class.view_prescriptions.collect {|prescription| "Id No.#{prescription.id}\n#{prescription.name}\n#{prescription.desc}\n#{prescription.notes}\n#{prescription.rating}" }
+        puts @@prescription.class.view_prescriptions.collect {|prescription| "Id No. #{prescription.id}\nName: #{prescription.name}\nDescription: #{prescription.desc}\nNotes: #{prescription.notes}\nRating: #{prescription.rating}\n\n" }
         final_step
     end 
     def view_prescriptions_by_rating
         puts "Enter a number to view all prescriptions with that rating"
         # binding.pry
         user_input
-        @@prescription.class.view_prescriptions_by_rating(@input).collect {|prescription| puts "Id No.#{prescription.id}\n#{prescription.name}\n#{prescription.desc}\n#{prescription.notes}\n#{prescription.rating}"}
+        @@prescription.class.view_prescriptions_by_rating(@input).collect {|prescription| puts "Id No. #{prescription.id}\nName: #{prescription.name}\nDescription: #{prescription.desc}\nNotes: #{prescription.notes}\nRating: #{prescription.rating}\n\n"}
         # puts @@prescription.class.view_prescriptions.collect {|prescription| puts "Id No.#{prescription.id}\n#{prescription.name}\n#{prescription.desc}\n#{prescription.notes}\n#{prescription.rating}" if prescription.rating == @input}
         # @@prescription[0].class.view_prescriptions_by_rating(@input)
         # puts @@prescription.class.view_prescriptions_by_rating(@input).collect do |prescription|
