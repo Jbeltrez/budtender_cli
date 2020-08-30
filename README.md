@@ -1,9 +1,9 @@
 # BudtenderCli
 
 
-Statutss babiiii
+For my first cli project I wanted to create a cli gem with some decent and useful functionality for the user rather than just allowing the user to view data. This cli is essentially a pharmacy for medical marijuana cannabis. The user will be able to be prescribed a strain of marijuana based on a desired effect. User input is heavily relied on to be able to instantiate prescription objects as well as set attributes via user input that can later be viewed while still in the pharmacy. 
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/budtender_cli`. To experiment with that code, run `bin/console` for an interactive prompt.
+<!-- Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/budtender_cli`. To experiment with that code, run `bin/console` for an interactive prompt. -->
 
 TODO: Delete this and the text above, and describe your gem
 
