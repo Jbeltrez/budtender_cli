@@ -72,7 +72,7 @@ class BudtenderCli::Prescription
         key = "CW3HtIO"
         url = "strainapi.evanbusse.com/#{key}/searchdata/effects"
         response = RestClient.get(url)
-        results = JSON.parse(response)
+        results = JSON.parse(response) 
         effects = results 
         # all_effects = effects.collect do |effect|
         #     effect.each do |k,v| 

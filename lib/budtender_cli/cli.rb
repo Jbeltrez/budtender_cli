@@ -4,73 +4,23 @@ class BudtenderCli::Cli
     # @@prescription = []
     def start 
         first_step 
-        # final_step
-        # user_input 
-        # while @input != "exit" do
-        #     greeting 
-        #     if @@desired_effects.any? {|effect| effect == @input}
-        #         label_warning 
-        #         sleep(2)
-        #         @@prescription = BudtenderCli::Prescription.new(@input)
-        #             # if @@prescription.desc == nil || ""
-        #             #     @@prescription.desc = "Currently no description available" 
-        #             # end
-        #         puts "Id No.#{@@prescription.id}\nName: #{@@prescription.name}\nDescription: #{@@prescription.desc}"
-        #         notes_time
-        #         sleep(1.5)
-        #         rating_time
-        #         sleep(1.5)
-                
-        #         puts "What would you like to do next?"
-        #         puts "      -----------------"
-        #         puts "Get another prescription"
-        #         puts "View my prescriptions"
-        #         puts "View my precriptions by rating"
-        #         puts "Exit pharmacy cli"
-        #         user_input
-
-        #         while @input != 'exit' 
-        #             case @input.downcase
-        #             when  "get another prescription"    
-        #                 main_menu
-        #             when "view my prescriptions"
-        #                 view_prescriptions
-        #             when "view my prescriptions by rating"
-        #                 view_prescriptions_by_rating
-        #             when "exit"
-        #                 exit 
-        #             end 
-        #         end 
-        #     end 
-        # end 
     end 
                 
     def first_step 
-        while @input != "exit"
-        puts "Hi! Welcome to the Pharmacy Cli"
-        puts "Enter a desired effect to recieve a prescription"
-        puts "Or enter exit to leave the pharmacy Cli"
-        @@desired_effects.each_with_index {|effect, i| puts "#{i+1}. #{effect.upcase}"}
-        user_input 
-        case @input 
-        when "relaxed" 
-            middle_step
-        when "euphoric" 
-            middle_step
-        when "creative" 
-            middle_step 
-        when "happy" 
-            middle_step
-        when "uplifted"
-            middle_step
-        
-
-    
+        while @input != "exit" do
+            puts "Hi! Welcome to the Pharmacy Cli"
+            puts "Enter a desired effect to recieve a prescription"
+            puts "Or enter exit to leave the pharmacy Cli"
+            @@desired_effects.each_with_index {|effect, i| puts "#{i+1}. #{effect.upcase}"}
+            user_input 
+            if @@desired_effects.include? @input 
+                puts "middle_step"
+                middle_step 
+            end
         end 
     end 
         
     
-    end
     def middle_step 
         label_warning 
                 sleep(1.5)
@@ -108,14 +58,6 @@ class BudtenderCli::Cli
             end 
         end 
     end 
-    # @input = " "
-
-                # when "exit"
-                #     # "goodbye have a nice day"
-                #     exit 
-            
-        
-
 
     def user_input
         @input = gets.strip.downcase
@@ -139,11 +81,6 @@ class BudtenderCli::Cli
         puts "Enter some notes for your prescription."
         user_input
         @@prescription.enter_notes=(@input)
-        # if user_input == "skip"
-            
-        # @@prescription[0].enter_notes=(@input)
-        #puts "Id No.#{prescription.id}\nName: #{prescription.name}\nDescription: #{prescription.desc}\nNotes: #{prescription.notes}\n"
-        
     end 
     def rating_time 
         puts "Give your prescription a star rating"
